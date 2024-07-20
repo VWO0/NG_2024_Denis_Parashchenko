@@ -1,6 +1,0 @@
-Create or update the use_code.sh file in the Lesson_No file and paste the above code.
-chmod +x use_code.sh
-
-Activate script:
-./use_code.sh
-
