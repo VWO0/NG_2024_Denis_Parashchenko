@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-int money, million_check = 1000001;
+int money;
 
 void checkLowSalary(int money) {
     if (1000 - money > 0) {
@@ -10,10 +10,9 @@ void checkLowSalary(int money) {
 }
 
 void checkHighSalary(int money) {
-    if (money - 1000000 > 0) {
+    if (money >= 1000000) {
         cout << "Yes, you are a millionaire!" << endl;
-    }
-    if (1000000 - money >= 0 && money - 1000 >= 0) {
+    } else if (money >= 1000) {
         cout << "You're doing a good job!" << endl;
     }
 }
@@ -25,6 +24,6 @@ int main() {
     checkLowSalary(money);
     checkHighSalary(money);
 
-    cout << "But you’re great!" << endl;
+    cout << "But youre great!" << endl;
     return 0;
 }
