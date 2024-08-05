@@ -6,17 +6,17 @@ int main() {
     cout << "Enter the height of the Christmas tree: ";
     cin >> height;
 
-    for (int i = 1; i <= height; ++i) {
-        for (int j = 0; j < height - i; ++j) {
+    for (int row = 1; row <= height; ++row) {
+        for (int space = 0; space < height - row; ++space) {
             cout << ' ';
         }
-        for (int k = 0; k < (2 * i - 1); ++k) {
+        for (int star = 0; star < (2 * row - 1); ++star) {
             cout << '*';
         }
         cout << endl;
     }
 
-    for (int i = 0; i < height - 1; ++i) {
+    for (int space = 0; space < height - 1; ++space) {
         cout << ' ';
     }
     cout << '*' << endl;

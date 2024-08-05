@@ -2,17 +2,15 @@
 
 using namespace std;
 
-void QuadraticEquation(double a,double b, double c){
-    if (a == 0){
-        cout << "Not Quadratic Equation." << endl;
-    }
-
-    return;
-}
-
 int main()
 {
     double a,b,c;
-    cout << "Hello World!" << endl;
+    cout << "Enter a,b,c.";
+    cin >> a >> b >> c;
+
+    if ((a = 0) &&  (b = 0) && (c = 0))
+    {
+        cout
+    }
     return 0;
 }
