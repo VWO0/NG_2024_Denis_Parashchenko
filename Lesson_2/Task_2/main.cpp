@@ -21,7 +21,7 @@ int main() {
     }
 
 
-    cout << "Result:";
+    cout << "Result:" << endl;
     for (int n : numbers) {
         int spaces = (maxStars - n) / 2;
         cout << string(spaces, ' ') << string(n, '*') << endl;
