@@ -1,25 +1,31 @@
 #include <iostream>
+#include <vector>
+
 using namespace std;
 
 int main() {
-    int height;
-    cout << "Enter the height of the Christmas tree: ";
-    cin >> height;
+    vector<int> numbers;
+    int number;
 
-    for (int row = 1; row <= height; ++row) {
-        for (int space = 0; space < height - row; ++space) {
-            cout << ' ';
-        }
-        for (int star = 0; star < (2 * row - 1); ++star) {
-            cout << '*';
-        }
-        cout << endl;
+    cout << "Enter numbers (0 to complete):";
+    while (numbers.size() < 20) {
+        cin >> number;
+        if (number == 0) break;
+        numbers.push_back(number);
     }
 
-    for (int space = 0; space < height - 1; ++space) {
-        cout << ' ';
+
+    int maxStars = 0;
+    for (int n : numbers) {
+        if (n > maxStars) maxStars = n;
     }
-    cout << '*' << endl;
+
+
+    cout << "Result:";
+    for (int n : numbers) {
+        int spaces = (maxStars - n) / 2;
+        cout << string(spaces, ' ') << string(n, '*') << endl;
+    }
 
     return 0;
 }
