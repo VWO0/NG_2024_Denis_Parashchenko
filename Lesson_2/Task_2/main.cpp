@@ -5,26 +5,26 @@ using namespace std;
 
 int main() {
     vector<int> numbers;
-    int number;
+    int inputNumber;
 
-    cout << "Enter numbers (0 to complete):";
+    cout << "Enter numbers (0 to complete): ";
     while (numbers.size() < 20) {
-        cin >> number;
-        if (number == 0) break;
-        numbers.push_back(number);
+        cin >> inputNumber;
+        if (inputNumber == 0) break;
+        numbers.push_back(inputNumber);
     }
 
-
-    int maxStars = 0;
-    for (int n : numbers) {
-        if (n > maxStars) maxStars = n;
+    int maxNumber = 0;
+    for (int currentNumber : numbers) {
+        if (currentNumber > maxNumber) {
+            maxNumber = currentNumber;
+        }
     }
-
 
     cout << "Result:" << endl;
-    for (int n : numbers) {
-        int spaces = (maxStars - n) / 2;
-        cout << string(spaces, ' ') << string(n, '*') << endl;
+    for (int currentNumber : numbers) {
+        int leadingSpaces = (maxNumber - currentNumber) / 2;
+        cout << string(leadingSpaces, ' ') << string(currentNumber, '*') << endl;
     }
 
     return 0;

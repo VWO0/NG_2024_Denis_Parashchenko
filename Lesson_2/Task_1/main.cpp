@@ -3,8 +3,27 @@
 
 using namespace std;
 
+const int numAccounts = 10;
+
+void calculateMinMax(float bank[], int size, float &minBalance, float &maxBalance) {
+    minBalance = numeric_limits<float>::max();
+    maxBalance = numeric_limits<float>::min();
+
+    for (int i = 0; i < size; i++) {
+        if (bank[i] < minBalance) minBalance = bank[i];
+        if (bank[i] > maxBalance) maxBalance = bank[i];
+    }
+}
+
+float calculateTotal(float bank[], int size) {
+    float total = 0;
+    for (int i = 0; i < size; i++) {
+        total += bank[i];
+    }
+    return total;
+}
+
 int main() {
-    const int numAccounts = 10;
     float bank[numAccounts] = {0};
     int accountNumber;
     float amount;
@@ -23,37 +42,39 @@ int main() {
             continue;
         }
 
-        cout << "Do you want to deposit (p) or withdraw (s) money? ";
+        cout << "Do you want to deposit (d), withdraw (w), or check balance (c)? ";
         cin >> action;
 
-        cout << "Enter amount: ";
-        cin >> amount;
+        if (action == 'd' || action == 'w') {
+            cout << "Enter amount: ";
+            cin >> amount;
 
-        if (action == 'p') {
-            bank[accountNumber - 1] += amount;
-        } else if (action == 's') {
-            if (amount > bank[accountNumber - 1]) {
-                cout << "There are not enough funds in the account!" << endl;
-            } else {
-                bank[accountNumber - 1] -= amount;
+            if (amount < 0) {
+                cout << "Amount cannot be negative!" << endl;
+                continue;
             }
+
+            if (action == 'd') {
+                bank[accountNumber - 1] += amount;
+            } else if (action == 'w') {
+                if (amount > bank[accountNumber - 1]) {
+                    cout << "Not enough funds in the account!" << endl;
+                } else {
+                    bank[accountNumber - 1] -= amount;
+                }
+            }
+        } else if (action == 'c') {
+            cout << "Balance of account " << accountNumber << ": " << bank[accountNumber - 1] << endl;
         } else {
             cout << "Unknown action!" << endl;
         }
     }
 
-    // Calculate total, minimum, and maximum balances
-    float total = 0;
-    float minBalance = numeric_limits<float>::max();
-    float maxBalance = numeric_limits<float>::min();
+    float minBalance, maxBalance;
+    calculateMinMax(bank, numAccounts, minBalance, maxBalance);
+    float total = calculateTotal(bank, numAccounts);
 
-    for (int i = 0; i < numAccounts; i++) {
-        total += bank[i];
-        if (bank[i] < minBalance) minBalance = bank[i];
-        if (bank[i] > maxBalance) maxBalance = bank[i];
-    }
-
-    cout << "Amount on all accounts: " << total << endl;
+    cout << "Total amount on all accounts: " << total << endl;
     cout << "Minimum balance: " << minBalance << endl;
     cout << "Maximum balance: " << maxBalance << endl;
 
