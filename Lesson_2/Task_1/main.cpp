@@ -5,20 +5,28 @@ using namespace std;
 
 const int numAccounts = 10;
 
-void calculateMinMax(float bank[], int size, float &minBalance, float &maxBalance) {
+void calculateMinMax(float bank[], int size, float &minBalance, float &maxBalance, int &minIndex, int &maxIndex) {
     minBalance = numeric_limits<float>::max();
     maxBalance = numeric_limits<float>::min();
+    minIndex = -1;
+    maxIndex = -1;
 
-    for (int i = 0; i < size; i++) {
-        if (bank[i] < minBalance) minBalance = bank[i];
-        if (bank[i] > maxBalance) maxBalance = bank[i];
+    for (int index = 0; index < size; index++) {
+        if (bank[index] < minBalance) {
+            minBalance = bank[index];
+            minIndex = index;
+        }
+        if (bank[index] > maxBalance) {
+            maxBalance = bank[index];
+            maxIndex = index;
+        }
     }
 }
 
 float calculateTotal(float bank[], int size) {
     float total = 0;
-    for (int i = 0; i < size; i++) {
-        total += bank[i];
+    for (int index = 0; index < size; index++) {
+        total += bank[index];
     }
     return total;
 }
@@ -71,12 +79,13 @@ int main() {
     }
 
     float minBalance, maxBalance;
-    calculateMinMax(bank, numAccounts, minBalance, maxBalance);
+    int minIndex, maxIndex;
+    calculateMinMax(bank, numAccounts, minBalance, maxBalance, minIndex, maxIndex);
     float total = calculateTotal(bank, numAccounts);
 
     cout << "Total amount on all accounts: " << total << endl;
-    cout << "Minimum balance: " << minBalance << endl;
-    cout << "Maximum balance: " << maxBalance << endl;
+    cout << "Minimum balance: " << minBalance << " (Account " << minIndex + 1 << ")" << endl;
+    cout << "Maximum balance: " << maxBalance << " (Account " << maxIndex + 1 << ")" << endl;
 
     return 0;
 }
