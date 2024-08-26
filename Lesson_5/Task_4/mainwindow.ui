@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="send_data">
+    <property name="geometry">
+     <rect>
+      <x>620</x>
+      <y>560</y>
+      <width>91</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #4CAF50; /* Зеленый фон */
+    color: white;              /* Белый текст */
+    border: 2px solid #4CAF50; /* Зеленая рамка */
+    border-radius: 10px;       /* Закругленные углы */
+    padding: 10px 20px;        /* Внутренние отступы */
+    font-size: 16px;           /* Размер шрифта */
+    font-weight: bold;         /* Жирный шрифт */
+}
+
+QPushButton:hover {
+    background-color: #45a049; /* Более светлый зеленый при наведении */
+}
+
+QPushButton:pressed {
+    background-color: #388E3C; /* Темный зеленый при нажатии */
+}
+</string>
+    </property>
+    <property name="text">
+     <string>Start</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="select_lang">
+    <property name="geometry">
+     <rect>
+      <x>710</x>
+      <y>560</y>
+      <width>91</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <item>
+     <property name="text">
+      <string>French</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Portuguese</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>German</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Romanian</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Greek</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Russian</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Hungarian</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Simplified Chinese
+</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Indonesian</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Spanish</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Italian</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Swedish</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Japanese</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Traditional Chinese
+</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Korean</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Thai</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Latin American Spanish
+</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Turkish</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Norwegian</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Ukrainian</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Polish</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Vietnamese</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QLineEdit" name="enter_data">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>560</y>
+      <width>621</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLineEdit {
+    border: 1px solid #4CAF50; /* Зеленая рамка */
+    border-radius: 5px;        /* Закругленные углы */
+    padding: 5px 10px;         /* Внутренние отступы */
+    background-color: #ffffff; /* Белый фон */
+    color: #333333;            /* Темный текст */
+    font-size: 14px;           /* Размер шрифта */
+}
+
+QLineEdit:focus {
+    border: 1px solid #45a049; /* Более светлый зеленый при фокусе */
+    background-color: #f0f0f0; /* Светлый фон при фокусе */
+}
+</string>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="user_data">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>30</y>
+      <width>791</width>
+      <height>531</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QTextEdit {
+    border: 2px solid #4CAF50; /* Зеленая рамка */
+    border-radius: 10px;       /* Закругленные углы */
+    padding: 10px;             /* Внутренние отступы */
+    background-color: #ffffff; /* Белый фон */
+    color: #333333;            /* Темный текст */
+    font-size: 16px;           /* Размер шрифта */
+    font-family: Arial;        /* Шрифт */
+}
+
+QTextEdit:focus {
+    border: 2px solid #45a049; /* Более светлый зеленый при фокусе */
+    background-color: #f9f9f9; /* Светлый фон при фокусе */
+}
+</string>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
