@@ -8,10 +8,10 @@ using namespace std;
 int countWords(const string& str) {
     string cleanedStr;
     for (char c : str) {
-        if (!isdigit(c) && !ispunct(c) && !isspace(c)) {
-            cleanedStr += c;
-        } else if (isspace(c)) {
+        if (isdigit(c) || ispunct(c)) {
             cleanedStr += ' ';
+        } else {
+            cleanedStr += c;
         }
     }
 
