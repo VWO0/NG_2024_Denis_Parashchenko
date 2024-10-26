@@ -9,21 +9,30 @@ void checkLowSalary(int money) {
     }
 }
 
-void checkHighSalary(int money) {
-    if (money >= 1000000) {
-        cout << "Yes, you are a millionaire!" << endl;
-    } else if (money >= 1000) {
+void checkMediumSalary(int money) {
+    if (money / 1000 > 1 && money / 1000000 == 0) {
         cout << "You're doing a good job!" << endl;
     }
+}
+
+void checkHighSalary(int money) {
+    if (money / 1000000 > 0) {
+        cout << "Yes, you are a millionaire!" << endl;
+    }
+}
+
+void CheckFunctions(int money) {
+    checkLowSalary(money);
+    checkMediumSalary(money);
+    checkHighSalary(money);
 }
 
 int main() {
     cout << "How much do you earn?" << endl;
     cin >> money;
 
-    checkLowSalary(money);
-    checkHighSalary(money);
+    CheckFunctions(money);
 
-    cout << "But youre great!" << endl;
+    cout << "But you're great!" << endl;
     return 0;
 }
